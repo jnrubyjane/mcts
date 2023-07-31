@@ -24,7 +24,7 @@ def optimize_bayesian(target_function, num_samples, initial_samples, batch_size)
         # 标准化输入
         candidate_x_standardized = standardize(candidate_x, train_X.mean(0), train_X.std(0))
         # 计算期望改进
-        acqf = ExpectedImprovement(model, train_Y.max())
+
         # 选择新的采样点
         new_x = optimize_acqf(
             acq_function=acqf,
